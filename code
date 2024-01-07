@@ -1,0 +1,40 @@
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream cin("mincols.in");
+    ofstream cout("mincols.out");
+    
+    int n, i, j, mat[101][101], mini = 1001;
+    
+    cin >> n;
+    
+    for(i = 1; i <= n; i ++)
+    {
+        for(j = 1; j <= n; j ++)
+        {
+            cin >> mat[i][j];
+        }
+    }
+    
+    for(i = 1; i <= n; i ++)
+    {
+        mini = 1001;
+        
+        for(j = 1; j <= n; j ++)
+        {
+            if(mat[j][i] < mini)
+            {
+                mini = mat[j][i];
+            }
+        }
+        
+        cout << mini << " ";
+    }
+    
+   
+
+    return 0;
+}
